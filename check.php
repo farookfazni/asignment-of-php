@@ -1,34 +1,32 @@
-// If the submit button has been pressed
-            if(isset($_GET['submit']))
-            {
-                // Check number values
-                if(is_numeric($_GET['number1']) && is_numeric($_GET['number2']))
-                {
-                    // Calculate total
-                    if($_GET['operation'] == '+')
-                    {
-                        $total = $_GET['number1'] + $_GET['number2'];	
-                    }
-                    if($_GET['operation'] == '-')
-                    {
-                        $total = $_GET['number1'] - $_GET['number2'];	
-                    }
-                    if($_GET['operation'] == '*')
-                    {
-                        $total = $_GET['number1'] * $_GET['number2'];	
-                    }
-                    if($_GET['operation'] == '/')
-                    {
-                        $total = $_GET['number1'] / $_GET['number2'];	
-                    }
-                    
-                    // Print total to the browser
-                    echo "<h1>{$total}</h1>";
-                
-                } else {
-                    
-                    // Print error message to the browser
-                    echo 'Numeric values are required';
-                
-                }
-            }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <?php 
+    if (isset($_GET['submit'])) {
+       function relation($nme1){
+         echo $nme1; 
+         echo '<button>';
+         echo 'ADD Relation';
+         echo '</button>';
+       } 
+       
+    }
+    ?>
+    <h1>Family Tree</h1>
+    <form action="check.php" method="GET">
+        Your Name : <input type="text" name="nme1">
+        <input type="submit">
+        <input type="reset">
+    </form>
+    <p><?php echo relation($_GET['nme1'] ?? ""); ?></p>
+</body>
+
+</html>
